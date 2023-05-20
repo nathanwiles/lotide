@@ -14,8 +14,14 @@ const eqArrays  = function(array1, array2) {
     output = true;
     // check if array element are not the same.
     for (let i = 0; i < array1.length; i++) {
-      // if any array element is not the same, change output to false, and break the loop.
-      if (array1[i] !== array2[i]) {
+       // handles nested arrays.
+       if (Array.isArray(array1[i]) && Array.isArray(array2[i])) {
+        if (!eqArrays(array1[i], array2[i])) {
+          output = false;
+          break;
+        }
+      } else if (array1[i] !== array2[i]) {
+        // if any array element is not the same, change output to false, and break the loop.
         output = false;
         break;
       }
@@ -47,7 +53,7 @@ const assertArraysEqual = function(array1, array2) {
   }
 };
 
-/*
+// /*
 let testArray1 = [1,2,3];
 let testArray2 = [1,2,3];
 let testArray3 = [1,'2',3];
@@ -56,4 +62,4 @@ let testArray4 = [1,4,3];
 assertArraysEqual(testArray1, testArray2);
 assertArraysEqual(testArray1, testArray3);
 assertArraysEqual(testArray1, testArray4);
-*/
+// */
