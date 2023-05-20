@@ -1,7 +1,7 @@
 /*
 Implement assertArraysEqual():
-  -will take in two arrays
-  -console.log an appropriate message to the console.
+  -will take in two arrays [done];
+  -console.log an appropriate message to the console. [done]
 */
 
 // eqArrays function from previous assignment, integrate into solution.
@@ -25,9 +25,33 @@ const eqArrays  = function(array1, array2) {
   return output;
   
 };
-// assertEqual function from previous assignent, ingegrate into solution.
-const assertEqual = function(actual, expected) {
-  (actual === expected) ? console.log(`✅✅✅ Assertion Passed: ${actual} === ${expected}`) :
-    console.log(`🔴🔴🔴 Assertion Failed: ${actual} !== ${expected}`);
 
+// define assertArraysEqual()
+const assertArraysEqual = function(array1, array2) {
+  // use eqArray to find if arrays are equal. assign return value to equalityBool
+  let equalityBool = eqArrays(array1, array2);
+  // check if equality bool is true
+  if (equalityBool) {
+    // if true log passed message
+    console.log(`✅✅✅ Assertion Passed: ${array1} === ${array2}`);
+  } else {
+    // else log failed message
+    console.log(`🔴🔴🔴 Assertion Failed: ${array1} !== ${array2}`);
+
+    // log additional context
+    if (array1.toString() === array2.toString()) {
+      console.log('↑↑↑↑↑↑ Reason: Mismatched data types');
+    } else {
+      console.log('↑↑↑↑↑↑ Reason: Array Values not equal');
+    }
+  }
 };
+
+let testArray1 = [1,2,3];
+let testArray2 = [1,2,3];
+let testArray3 = [1,'2',3];
+let testArray4 = [1,4,3];
+
+assertArraysEqual(testArray1, testArray2);
+assertArraysEqual(testArray1, testArray3);
+assertArraysEqual(testArray1, testArray4);
