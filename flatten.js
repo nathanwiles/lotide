@@ -40,3 +40,29 @@ const assertArraysEqual = function(array1, array2) {
     }
   }
 };
+
+/* TASKS:
+   - Create function flatten() 
+    - take in an array containing elements including nested arrays
+    - return a "flattened" version of the array. 
+  [done]
+  - Build test cases.
+    - use different data types.
+  
+*/
+
+const flatten = function(sourceArray) {
+  let target = [];
+  for (const element of sourceArray) {
+    if (Array.isArray(element)){
+      for (const nestedVal of element) {
+        target.push(nestedVal);
+      }
+    } else {
+      target.push(element);
+    }
+  }
+  return target;
+};
+
+console.log(flatten([[2,'a',4],5,'howitzer',7,[8,'9',10]]));
