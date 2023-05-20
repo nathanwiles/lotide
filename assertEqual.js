@@ -4,7 +4,6 @@ const assertEqual = function(actual, expected) {
     console.log(`🔴🔴🔴 Assertion Failed: ${actual} !== ${expected}`);
 
 };
-
 // TEST CODE
 assertEqual("Tidal waves", "Ocean");
 assertEqual(6,6);
