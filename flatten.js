@@ -8,8 +8,15 @@ const eqArrays  = function(array1, array2) {
     output = true;
     // check if array element are not the same.
     for (let i = 0; i < array1.length; i++) {
-      // if any array element is not the same, change output to false, and break the loop.
-      if (array1[i] !== array2[i]) {
+      // handles nested arrays.
+      if (Array.isArray(array1[i]) && Array.isArray(array2[i])) {
+        if (!eqArrays(array1[i], array2[i])) {
+          output = false;
+          break;
+        }
+      } else if (array1[i] !== array2[i]) {
+        // if any array element is not the same, change output to false, and break the loop.
+        console.log(array1[i],array2[i]);
         output = false;
         break;
       }
@@ -42,9 +49,9 @@ const assertArraysEqual = function(array1, array2) {
 };
 
 /* TASKS:
-   - Create function flatten() 
+   - Create function flatten()
     - take in an array containing elements including nested arrays
-    - return a "flattened" version of the array. 
+    - return a "flattened" version of the array.
   [done]
   - Build test cases.
     - use different data types.
@@ -54,7 +61,7 @@ const assertArraysEqual = function(array1, array2) {
 const flatten = function(sourceArray) {
   let target = [];
   for (const element of sourceArray) {
-    if (Array.isArray(element)){
+    if (Array.isArray(element)) {
       for (const nestedVal of element) {
         target.push(nestedVal);
       }
@@ -65,4 +72,11 @@ const flatten = function(sourceArray) {
   return target;
 };
 
-console.log(flatten([[2,'a',4],5,'howitzer',7,[8,'9',10]]));
+// TEST CASES
+// define array to be tested
+let testArray1 = [[2,'a',4],5,'howitzer',7,[8,'9',10]];
+
+// test that output array is flattened
+assertArraysEqual(flatten(testArray1),[2, 'a', 4, 5, 'howitzer', 7, 8, '9', 10]);
+// test that original array remains unaffected.
+assertArraysEqual([[2,'a',4],5,'howitzer',7,[8,'9',10]], testArray1);
