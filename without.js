@@ -45,11 +45,30 @@ const assertArraysEqual = function(array1, array2) {
   - Implement without() to
     - return a subset of a given array
       - remove unwanted elements.
+  [done]
 
-  - Use assertArraysEqual() to write test cases 
+  - Use assertArraysEqual() to write test cases
     - various scenarios.
 */
 
+// DEFINE without()
 const without = function(source, itemsToRemove) {
-  
+  let target = source;
+  for (const item of itemsToRemove) {
+    target = target.filter(element => element !== item);
+  }
+  return target;
 };
+
+// TEST CASES
+let testRemovalArray1 = [2,'7',4,'s',"waves"];
+let testArray1 = [1,2,3,4,5,6,7,"waves",8,9,10];
+let testArray2 = [3,2,2,2,2,2,'7',4,5,6,4,7,'s'];
+
+// test that without() is outputting correctly
+assertArraysEqual(without(testArray1, testRemovalArray1),[1,3,5,6,7,8,9,10]);
+assertArraysEqual(without(testArray2, testRemovalArray1),[3,5,6,7]);
+// test that without() does not alter the original array.
+assertArraysEqual(testArray1, [1,2,3,4,5,6,7,'waves',8,9,10]);
+assertArraysEqual(testArray2, [3,2,2,2,2,2,'7',4,5,6,4,7,'s']);
+
