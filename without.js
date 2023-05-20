@@ -40,3 +40,16 @@ const assertArraysEqual = function(array1, array2) {
     }
   }
 };
+
+/* TASKS:
+  - Implement without() to
+    - return a subset of a given array
+      - remove unwanted elements.
+
+  - Use assertArraysEqual() to write test cases 
+    - various scenarios.
+*/
+
+const without = function(source, itemsToRemove) {
+  
+};
