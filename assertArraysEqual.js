@@ -4,7 +4,7 @@ Implement assertArraysEqual():
   -console.log an appropriate message to the console.
 */
 
-// eqArrays function from previous assignment, rework to fit current task.
+// eqArrays function from previous assignment, integrate into solution.
 const eqArrays  = function(array1, array2) {
   // set default output to false;
   let output = false;
@@ -24,4 +24,10 @@ const eqArrays  = function(array1, array2) {
   // return output aka true or false depending on arrays passed
   return output;
   
+};
+// assertEqual function from previous assignent, ingegrate into solution.
+const assertEqual = function(actual, expected) {
+  (actual === expected) ? console.log(`✅✅✅ Assertion Passed: ${actual} === ${expected}`) :
+    console.log(`🔴🔴🔴 Assertion Failed: ${actual} !== ${expected}`);
+
 };
