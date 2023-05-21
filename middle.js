@@ -47,10 +47,10 @@ const assertArraysEqual = function(array1, array2) {
     }
   }
 };
-/* 
+/*
 TASKS:
-  - create middle() function:
-    -return an array of the middle element(s) of the provided array. 
+  - create middle() function: [done]
+    -return an array of the middle element(s) of the provided array.
       -length of the returned elements may vary.
         - 1-2 elements: no middle. Return empty array.
         - odd number of elements: 1 middle element, return it contained in an array.
@@ -60,5 +60,41 @@ TASKS:
     - odd number of elements
     - even number of elements
     - original arrays remain the same
-
  */
+
+const middle = function(array) {
+  let target = [];
+  let length = array.length;
+  if (length > 2) {
+    let middleIndex = [];
+    if (length % 2 !== 0) {
+      middleIndex.push(Math.floor(length / 2));
+    } else {
+      middleIndex.push(length / 2 - 1,length / 2);
+    }
+
+    for (const index of middleIndex) {
+      target.push(array[index]);
+    }
+  }
+  return target;
+};
+
+// TEST CASES
+
+let tA1 = [1,2,3,4,5,6,7,8];
+let tA2 = [1,2,3,4,5,6,7];
+let tA3 = ['a','b','c','d'];
+let tA4 = ['a','b','c','d','e'];
+let tA5 = [];
+let tA6 = [1];
+let tA7 = [1,2];
+
+assertArraysEqual(middle(tA1),[4,5]);
+assertArraysEqual(middle(tA2),[4]);
+assertArraysEqual(middle(tA3),['b','c']);
+assertArraysEqual(middle(tA4),['c']);
+assertArraysEqual(middle(tA5),[]);
+assertArraysEqual(middle(tA6),[]);
+assertArraysEqual(middle(tA7),[]);
+
