@@ -47,3 +47,18 @@ const assertArraysEqual = function(array1, array2) {
     }
   }
 };
+/* 
+TASKS:
+  - create middle() function:
+    -return an array of the middle element(s) of the provided array. 
+      -length of the returned elements may vary.
+        - 1-2 elements: no middle. Return empty array.
+        - odd number of elements: 1 middle element, return it contained in an array.
+        - even number of elements: 2 middle elements, return them contained in an array.
+  - create assertions to test:
+    - 1-2 element arrays
+    - odd number of elements
+    - even number of elements
+    - original arrays remain the same
+
+ */
