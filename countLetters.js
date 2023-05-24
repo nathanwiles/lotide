@@ -20,12 +20,13 @@ const assertEqual = function(actual, expected) {
 const countLetters = function(sentence) {
   let letterCounts = {};
   let lowercaseSentence = sentence.toLowerCase();
-  let countableSentence = lowercaseSentence.replace(/\s/g, "");
-  for (const letter of countableSentence) {
-    if (letterCounts[letter]) {
-      letterCounts[letter] += 1;
-    } else {
-      letterCounts[letter] = 1;
+  for (const char of lowercaseSentence) {
+    if (char !== " ") {
+      if (letterCounts[char]) {
+        letterCounts[char] += 1;
+      } else {
+        letterCounts[char] = 1;
+      }
     }
   }
   return letterCounts;
