@@ -12,4 +12,15 @@ const assertEqual = function(actual, expected) {
     - compare current object key's value to searchValue:
       - match: store current key
   - return result
-*/ 
+*/
+
+// IMPLEMENTATION
+const findKeyByValue = function(object, searchValue) {
+  let searchResult;
+  for (const key in object) {
+    if (searchValue === object[key]) {
+      searchResult = key;
+    }
+  }
+  return searchResult;
+};
