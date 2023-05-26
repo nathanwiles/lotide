@@ -24,3 +24,27 @@ const findKeyByValue = function(object, searchValue) {
   }
   return searchResult;
 };
+
+// TEST CASES:
+const bestTVShowsByGenre = { 
+  sci_fi: "The Expanse",
+  comedy: "Brooklyn Nine-Nine",
+  drama:  "The Wire"
+};
+
+assertEqual(findKeyByValue(bestTVShowsByGenre, "The Wire"), "drama");
+assertEqual(findKeyByValue(bestTVShowsByGenre, "That '70s Show"), undefined);
+assertEqual(findKeyByValue(bestTVShowsByGenre, "The Expanse"), "sci_fi");
+
+const testObject = {
+  something : "more than nothing",
+  nothing : "the absense of things",
+  things : "organized matter",
+  matter : "that which materializes",
+  matterialize : "to take shape, or come into being",
+  being: "the state of existing"
+};
+
+assertEqual(findKeyByValue(testObject, "more than nothing"),"something");
+assertEqual(findKeyByValue(testObject, "that which materializes"), "matter");
+assertEqual(findKeyByValue(testObject, "the meaning of life"), undefined);
