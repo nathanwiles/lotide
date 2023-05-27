@@ -19,24 +19,16 @@ const assertEqual = function(actual, expected) {
 
 // define eqArrays function
 const eqArrays  = function(array1, array2) {
-  // set default output to false;
-  let output = false;
-  // check if array lengths are the same.
-  if (array1.length === array2.length) {
-    // if length is equal, set output to true.
-    output = true;
-    // check if array element are not the same.
-    for (let i = 0; i < array1.length; i++) {
-      // if any array element is not the same, change output to false, and break the loop.
-      if (array1[i] !== array2[i]) {
-        output = false;
-        break;
-      }
+  // if arrays are different length return false.
+  if (array1.length !== array2.length) return false;
+  for (let i = 0; i < array1.length; i++) {
+    // if any array element is not the same, return false.
+    if (array1[i] !== array2[i]) {// check if array element are not the same.
+      return false;
     }
   }
-  // return output aka true or false depending on arrays passed
-  return output;
-  
+  // all tests passed if reached.
+  return true;
 };
 
 assertEqual(eqArrays([1,2,3],[1,2,3]),true); // tests matching arrays
