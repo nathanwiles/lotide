@@ -1,12 +1,11 @@
 // DEFINE HELPER FUNCTIONS
-// define
+// define assertEqual function
 const assertEqual = function(actual, expected) {
   let resultingBool = actual === expected;
   resultingBool
     ? console.log(`✅✅✅ Assertion Passed: ${actual} === ${expected}`)
     : console.log(`🔴🔴🔴 Assertion Failed: ${actual} !== ${expected}`);
 };
-
 // define eqArrays function
 const eqArrays  = function(array1, array2) {
   // if arrays are different length return false.
@@ -20,7 +19,7 @@ const eqArrays  = function(array1, array2) {
   // all tests passed if reached.
   return true;
 };
-
+// MAIN FUNCTION
 // Define eqObjects function
 const eqObjects = function(obj1, obj2) {
   const obj1Keys = Object.keys(obj1);
