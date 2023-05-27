@@ -1,6 +1,6 @@
 // DEFINE HELPER FUNCTIONS
-// define 
-const assertEqual = function (actual, expected) {
+// define
+const assertEqual = function(actual, expected) {
   let resultingBool = actual === expected;
   resultingBool
     ? console.log(`✅✅✅ Assertion Passed: ${actual} === ${expected}`)
@@ -21,22 +21,8 @@ const eqArrays  = function(array1, array2) {
   return true;
 };
 
-/* TASK:
-  - DEFINE eqObjects:
-    -take in 2 objects as arguments
-    -check if both have the same number of keys
-      -if not return false
-    -iterate over the first Object's keys
-      -check if values match each other
-        -if not return false.
-      
-    return true as tests are passed.
-
-            
-*/
-
 // Define eqObjects function
-const eqObjects = function (obj1, obj2) {
+const eqObjects = function(obj1, obj2) {
   const obj1Keys = Object.keys(obj1);
   const obj2Keys = Object.keys(obj2);
   if (obj1Keys.length !== obj2Keys.length) return false;
@@ -50,6 +36,9 @@ const eqObjects = function (obj1, obj2) {
   }
   return true; // if the code makes it this far all test were passed.
 };
+
+
+
 
 // TEST CASES: Primitive values
 const pantsObject = { colour: "blue", size: 32 };
