@@ -1,24 +1,21 @@
 // DEFINE HELPER FUNCTION
-const assertEqual = function (actual, expected, assertTitle) {
-  console.log(assertTitle);
+const assertEqual = function (actual, expected) {
+  
   let resultingBool = (actual === expected);
   resultingBool
     ? console.log(`✅✅✅ Assertion Passed: ${actual} === ${expected}`)
     : console.log(`🔴🔴🔴 Assertion Failed: ${actual} !== ${expected}`);
-  // return built in to service eqObjects
-  return resultingBool;
 };
 
 /* TASK:
   - DEFINE eqObjects:
     -take in 2 objects as arguments
     -check if both have the same number of keys
-      -if false, 
+      -if false return false
       -if true:
       -iterate over the first Object's keys
-        -check if both objects contain the current key.
-          -check if values referenced by the keys match using assertEqual()
-
+        -check if values, referenced by the key, match using assertEqual()
+        -
             
 */
 
@@ -35,7 +32,9 @@ const eqObjects = function (obj1, obj2) {
 // TEST CASES
 const pantsObject = {colour: "blue", size: 32};
 const anotherPantsObject = {size: 32, colour: "blue"};
-eqObjects(pantsObject, anotherPantsObject); // => true
+assertEqual(eqObjects(pantsObject, anotherPantsObject), true); // => true
 
 const longPantsObject = {colour: "blue", size: 32, length: 34};
-eqObjects(longPantsObject, pantsObject); // => false
+assertEqual(eqObjects(longPantsObject, pantsObject), false); // => false
+
+
