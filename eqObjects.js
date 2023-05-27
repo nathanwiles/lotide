@@ -28,11 +28,14 @@ const eqObjects = function (obj1, obj2) {
   //if (assertEqual(obj1Keys.length, obj2Keys.length, "Quantiny of keys:")) {
     
 
-  };
+  //};
 };
 
 
+// TEST CASES
+const pantsObject = {colour: "blue", size: 32};
+const anotherPantsObject = {size: 32, colour: "blue"};
+eqObjects(pantsObject, anotherPantsObject); // => true
 
-let test = { i: 2, gf: 1, ts: 5, ys: 90 };
-
-eqObjects(test, test);
+const longPantsObject = {colour: "blue", size: 32, length: 34};
+eqObjects(longPantsObject, pantsObject); // => false
