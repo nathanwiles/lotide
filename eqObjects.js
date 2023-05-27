@@ -23,11 +23,15 @@ const assertEqual = function (actual, expected, assertTitle) {
 */
 
 const eqObjects = function (obj1, obj2) {
-  const obj1Keys = Object.keys(obj1);
-  const obj2Keys = Object.keys(obj2);
-  if (assertEqual(obj1Keys.length, obj2Keys.length, "Quantiny of keys:")) {
-  }
+  //const obj1Keys = Object.keys(obj1);
+  //const obj2Keys = Object.keys(obj2);
+  //if (assertEqual(obj1Keys.length, obj2Keys.length, "Quantiny of keys:")) {
+    
+
+  };
 };
+
+
 
 let test = { i: 2, gf: 1, ts: 5, ys: 90 };
 
