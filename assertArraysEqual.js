@@ -4,7 +4,7 @@ Implement assertArraysEqual():
   -console.log an appropriate message to the console. [done]
 */
 
-// eqArrays function from previous assignment, integrate into solution.
+// eqArrays function
 const eqArrays  = function(array1, array2) {
   // set default output to false;
   let output = false;
