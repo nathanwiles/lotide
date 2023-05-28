@@ -32,7 +32,7 @@ const eqArrays  = function(array1, array2) {
   
 };
 
-// define assertArraysEqual()
+// assertArraysEqual()
 const assertArraysEqual = function(array1, array2) {
   // use eqArray to find if arrays are equal. assign return value to equalityBool
   let equalityBool = eqArrays(array1, array2);
