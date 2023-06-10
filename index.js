@@ -1,13 +1,14 @@
 const _ = {
-  head: require("./head"),
-  tail: require("./tail"),
-  middle: require("./middle"),
   countLetters: require("./countLetters"),
   countOnly: require("./countOnly"),
   findKey: require("./findKey"),
   findKeyByValue: require("./findKeyByValue"),
   flatten : require("./flatten"),
-  letterPositions : require("./letterPositions")
+  head: require("./head"),
+  letterPositions : require("./letterPositions"),
+  map : require("./map"),
+  middle: require("./middle"),
+  tail: require("./tail"),
   
 };
 
