@@ -5,6 +5,7 @@ const _ = {
   countLetters: require("./countLetters"),
   countOnly: require("./countOnly"),
   findKey: require("./findKey"),
+  findKeyByValue: require("./findKeyByValue"),
   
 };
 
