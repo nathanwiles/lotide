@@ -6,6 +6,8 @@ const _ = {
   countOnly: require("./countOnly"),
   findKey: require("./findKey"),
   findKeyByValue: require("./findKeyByValue"),
+  flatten : require("./flatten"),
+  
   
 };
 
