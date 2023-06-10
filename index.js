@@ -9,7 +9,9 @@ const _ = {
   map : require("./map"),
   middle: require("./middle"),
   tail: require("./tail"),
+  takeUntil : require("./takeUntil"),
   
+
 };
 
 module.exports = _;
