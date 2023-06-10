@@ -1,25 +1,27 @@
-// import eqArrays function
-const eqArrays = require("./eqArrays");
+// Created by Nathan Wiles
+// Part of Lotide project
 
-// assertArraysEqual()
-const assertArraysEqual = function(array1, array2) {
-  // use eqArray to find if arrays are equal. assign return value to equalityBool
-  let equality = eqArrays(array1, array2);
-  // check if equality bool is true
-  if (equality) {
-    // if true log passed message
-    console.log(`✅✅✅ Assertion Passed: ${array1} === ${array2}`);
+const eqArrays = require("./eqArrays"); // import eqArrays function
+
+// use eqArray to find if arrays are equal. assign return value to equalityBool
+const assertArraysEqual = function (array1, array2) {
+
+  if (eqArrays(array1, array2)) { // check if arrays are equal
+    
+    console.log(`✅✅✅ Assertion Passed: ${array1} === ${array2}`); // if true log passed message
   } else {
-    // else log failed message
-    console.log(`🔴🔴🔴 Assertion Failed: ${array1} !== ${array2}`);
+    console.log(`🔴🔴🔴 Assertion Failed: ${array1} !== ${array2}`); // else log failed message
+
 
     // log additional context
     if (array1.toString() === array2.toString()) {
-      console.log("↑↑↑↑↑↑ Reason: Mismatched data types");
+      // check if array values are equal but data types are not
+      console.log("↑↑↑↑↑↑ Reason: Mismatched data types"); // if true log mismatched data types
     } else {
-      console.log("↑↑↑↑↑↑ Reason: Array Values not equal");
+      // if array values are not equal
+      console.log("↑↑↑↑↑↑ Reason: Array Values not equal"); // log array values not equal
     }
   }
 };
 
-module.exports = assertArraysEqual;
+module.exports = assertArraysEqual; // export assertArraysEqual function

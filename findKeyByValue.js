@@ -1,4 +1,7 @@
-// IMPLEMENTATION
+//Created by Nathan Wiles
+//Part of Lotide project
+
+// function to find key in object based on value
 const findKeyByValue = function (object, searchValue) {
   let searchResult; // a place to put search results.
   for (const key in object) {
@@ -11,4 +14,4 @@ const findKeyByValue = function (object, searchValue) {
   return searchResult;
 };
 
-module.exports = findKeyByValue;
+module.exports = findKeyByValue; // export findKeyByValue function

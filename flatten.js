@@ -1,4 +1,7 @@
-//turn nested arrays into a single-level array
+// Created by Nathan Wiles
+// Part of Lotide project
+
+// Function: turn nested arrays into a single-level array
 const flatten = function (sourceArray) {
   let results = []; // define results array
   for (const element of sourceArray) {
@@ -16,4 +19,4 @@ const flatten = function (sourceArray) {
   return results;
 };
 
-module.exports = flatten;
+module.exports = flatten; // export flatten function
