@@ -32,10 +32,4 @@ const countLetters = function(sentence) {
   return letterCounts;
 };
 
-let testSentence = "test me and see what happens";
-let testCount = countLetters(testSentence);
-
-assertEqual(testCount.t, 3);
-assertEqual(testCount.e, 5);
-assertEqual(testCount.f, undefined);
-assertEqual(testCount.w, 1);
+module.exports = countLetters;
