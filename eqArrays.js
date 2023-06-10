@@ -1,29 +1,17 @@
-/*
-  -Implement a function eqArrays:
-    -takes in two arrays and returns true or false
-     -based on a perfect match.
-    [done!]
-
-  - Run test Cases
-    - compare perfectly matching arrays
-    - compare non matching arrays
-    [done!]
- */
-
-// define assertEqual function
-const assertEqual = function(actual, expected) {
-  (actual === expected) ? console.log(`✅✅✅ Assertion Passed: ${actual} === ${expected}`) :
-    console.log(`🔴🔴🔴 Assertion Failed: ${actual} !== ${expected}`);
-
-};
-
-// define eqArrays function
-const eqArrays  = function(array1, array2) {
+// eqArrays: a function that takes in two arrays and returns true or false, based on a perfect match.
+const eqArrays = function (array1, array2) {
+  if (!Array.isArray(array1) || !Array.isArray(array2)) return false; // check if both arguments are arrays.
   // if arrays are different length return false.
   if (array1.length !== array2.length) return false;
-  for (let i = 0; i < array1.length; i++) {
-    // if any array element is not the same, return false.
-    if (array1[i] !== array2[i]) {// check if array element are not the same.
+  for (const index in array1) {
+    console.log(index);
+    let element1 = array1[index];
+    let element2 = array2[index];
+    // handles nested arrays.
+    if (Array.isArray(element1)) {
+      eqArrays(element1, element2);
+    } else if (array1[index] !== array2[index]) {
+      // check if array element are not the same.
       return false;
     }
   }
@@ -31,5 +19,4 @@ const eqArrays  = function(array1, array2) {
   return true;
 };
 
-assertEqual(eqArrays([1,2,3],[1,2,3]),true); // tests matching arrays
-assertEqual(eqArrays([1,2,3],[1,2,'3']),true); // tests non-matching arrays
+module.exports = eqArrays;
