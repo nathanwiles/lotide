@@ -1,9 +1,12 @@
 //turn nested arrays into a single-level array
-const flatten = function(sourceArray) {
+const flatten = function (sourceArray) {
   let results = []; // define results array
-  for (const element of sourceArray) { // iterate through source array
-    if (Array.isArray(element)) { // check if element is an array
-      for (const nestedVal of element) {  // if so, iterate through nested array
+  for (const element of sourceArray) {
+    // iterate through source array
+    if (Array.isArray(element)) {
+      // check if element is an array
+      for (const nestedVal of element) {
+        // if so, iterate through nested array
         results.push(nestedVal); // push each nested value to results array
       }
     } else {
