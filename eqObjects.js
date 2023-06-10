@@ -1,24 +1,8 @@
 // DEFINE HELPER FUNCTIONS
 // define assertEqual function
-const assertEqual = function(actual, expected) {
-  let resultingBool = actual === expected;
-  resultingBool
-    ? console.log(`✅✅✅ Assertion Passed: ${actual} === ${expected}`)
-    : console.log(`🔴🔴🔴 Assertion Failed: ${actual} !== ${expected}`);
-};
+const assertEqual = require("./assertEqual");
 // define eqArrays function
-const eqArrays  = function(array1, array2) {
-  // if arrays are different length return false.
-  if (array1.length !== array2.length) return false;
-  for (let i = 0; i < array1.length; i++) {
-    // if any array element is not the same, return false.
-    if (array1[i] !== array2[i]) { // check if array element are not the same.
-      return false;
-    }
-  }
-  // all tests passed if reached.
-  return true;
-};
+const eqArrays  = require("./eqArrays");
 // MAIN FUNCTION
 // Define eqObjects function
 const eqObjects = function(obj1, obj2) {
