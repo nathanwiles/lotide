@@ -1,5 +1,4 @@
-
-const countOnly = function(allItems, itemsToCount) {
+const countOnly = function (allItems, itemsToCount) {
   let output = {};
   for (const testItem in itemsToCount) {
     let matches = allItems.filter((targetItem) => targetItem === testItem); // filter matches into a new array to bo counted.

@@ -1,4 +1,3 @@
-
 const countOnly = require("../countOnly");
 const assert = require("chai").assert;
 
@@ -22,20 +21,17 @@ const result1 = countOnly(firstNames, {
   Agouhanna: false,
 });
 
-
-
 describe("#countOnly", () => {
   it("returns 1 for 'Jason' in firstNames", () => {
     assert.equal(result1["Jason"], 1);
-  })
+  });
   it("returns undefined for 'Karima' in firstNames", () => {
     assert.isUndefined(result1["Karima"]);
-  })
+  });
   it("returns 2 for 'Fang' in firstNames", () => {
     assert.equal(result1["Fang"], 2);
-  })
+  });
   it("returns undefined for 'Agouhanna' in firstNames", () => {
     assert.isUndefined(result1["Agouhanna"]);
-  })
-
+  });
 });
