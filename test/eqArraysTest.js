@@ -8,4 +8,6 @@ assertEqual(eqArrays([1, 2, 3], [1, 2]), true); // tests arrays of different len
 assertEqual(
   eqArrays([1, [2, 3, [4, 6, [7], 8], 10]], [1, [2, 3, [4, 6, [7], 8], 10]]),
   true
-); // test nested arrays
+  ); 
+assertEqual(eqArrays([1, [2, 3, [4, 6, [7], 8], 10]], [1, [2, 3, [4, 6, [7], 8], 10]]), true); //tests nested arrays
+

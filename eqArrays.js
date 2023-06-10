@@ -12,7 +12,9 @@ const eqArrays = function (array1, array2) {
     let element2 = array2[index]; // get element at index from array2
     
     if (Array.isArray(element1)) { // handles nested arrays using recursion
-      eqArrays(element1, element2);
+      if (!eqArrays(element1, element2)){
+        return false; // if nested arrays are not equal return false.
+      };
 
     } else if (array1[index] !== array2[index]) { // check if array element are not the same.
       return false;
