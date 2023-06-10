@@ -10,8 +10,7 @@ const _ = {
   middle: require("./middle"),
   tail: require("./tail"),
   takeUntil : require("./takeUntil"),
-  
-
+  without : require("./without")
 };
 
 module.exports = _;
