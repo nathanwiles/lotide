@@ -4,7 +4,7 @@ const eqArrays = function (array1, array2) {
   // if arrays are different length return false.
   if (array1.length !== array2.length) return false;
   for (const index in array1) {
-    console.log(index);
+  
     let element1 = array1[index];
     let element2 = array2[index];
     // handles nested arrays.
