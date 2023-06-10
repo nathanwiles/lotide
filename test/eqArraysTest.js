@@ -1,6 +1,7 @@
 const eqArrays = require("../eqArrays");
 const assertEqual = require("../assertEqual");
 
+console.log("\nTEST CODE for eqArrays.js");
 assertEqual(eqArrays([1, 2, 3], [1, 2, 3]), true); // tests matching arrays
 assertEqual(eqArrays([1, 2, 3], [1, 2, "3"]), true); // tests non-matching arrays
 assertEqual(eqArrays([1, 2, 3], [1, 2]), true); // tests arrays of different lengths
