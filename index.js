@@ -7,7 +7,7 @@ const _ = {
   findKey: require("./findKey"),
   findKeyByValue: require("./findKeyByValue"),
   flatten : require("./flatten"),
-  
+  letterPositions : require("./letterPositions")
   
 };
 
