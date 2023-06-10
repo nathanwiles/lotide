@@ -1,6 +1,6 @@
 {
   "name": "@falcre/lotide",
-  "version": "1.0.1",
+  "version": "1.0.2",
   "description": "lighthouse labs project. lodash rebuild.",
   "main": "index.js",
   "directories": {
